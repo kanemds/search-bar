@@ -8,7 +8,7 @@ const SearchBar = ({ posts, setSearch }) => {
 
   const [input, setInput] = useState('')
 
-  const debounceValue = useDebounce(input.toLowerCase(), 5000)
+  const debounceValue = useDebounce(input.toLowerCase(), 1000)
 
   useEffect(() => {
     if (!debounceValue) return setSearch(posts) // return all posts if empty
