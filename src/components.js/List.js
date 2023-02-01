@@ -8,5 +8,9 @@ export const List = ({ search }) => {
 
   const content = result?.length ? result : <Typography>No Matching Post(s)</Typography>
 
-  return content
+  return (
+    <Box sx={{ width: '80%' }}>
+      {content}
+    </Box >
+  )
 }
