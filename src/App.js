@@ -1,5 +1,7 @@
 import { getPosts } from "./api"
 import { useState, useEffect } from "react"
+import { Box } from "@mui/material"
+import SearchBar from "./components.js/SearchBar"
 
 function App() {
 
@@ -10,20 +12,20 @@ function App() {
   console.log(getPosts())
 
   useEffect(() => {
-    getPosts().then(json => {
-      setPosts(json)
-      return json
-    }).then(json => {
-      setSearch(json)
+    getPosts().then(jsonData => {
+      setPosts(jsonData)
+      return jsonData
+    }).then(jsonData => {
+      setSearch(jsonData)
     })
   }, [])
 
   console.log(posts)
 
   return (
-    <div className="App">
-
-    </div>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <SearchBar />
+    </Box>
   )
 }
 
